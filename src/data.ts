@@ -178,6 +178,8 @@ export const PROCESS_STEPS: ProcessStep[] = [
   }
 ];
 
+import defaultAvatar from "../assets/default-avatar.svg";
+
 export const TESTIMONIALS: Testimonial[] = [
   {
     id: "tst-1",
@@ -185,7 +187,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Client Univers des Boutchous",
     company: "Univers des Boutchous",
     content: "William a réalisé un travail fantastique pour le backend de notre site et notre espace administrateur sous Filament PHP. Sa réactivité, sa maîtrise de Laravel et sa vision pour l'optimisation des performances ont été des facteurs clés dans la réussite de notre lancement.",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=150&h=150&q=80",
+    avatar: defaultAvatar,
     rating: 5
   },
   {
@@ -194,7 +196,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Partenaire Technologique",
     company: "AFRIKLABTECH",
     content: "William est un développeur exceptionnel et un esprit entrepreneurial remarquable. Sa capacité à allier développement web de pointe et briques de cybersécurité ultra-robustes nous a permis de livrer des applications extrêmement sécurisées à des clients très exigeants.",
-    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150&h=150&q=80",
+    avatar: defaultAvatar,
     rating: 5
   },
   {
@@ -203,7 +205,7 @@ export const TESTIMONIALS: Testimonial[] = [
     role: "Enseignant Chercheur / Superviseur",
     company: "Digital Sun / UVCI",
     content: "Konan William a démontré un niveau d'excellence technique exceptionnel durant ses travaux de développement. Sa rigueur intellectuelle, sa maîtrise de PHP et de JavaScript et son professionnalisme en font un atout majeur pour tout projet de développement de grande envergure.",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150&h=150&q=80",
+    avatar: defaultAvatar,
     rating: 5
   }
 ];
