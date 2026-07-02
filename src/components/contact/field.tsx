@@ -6,10 +6,11 @@ type Props = {
   flaw?: string;
   kind?: "email" | "text";
   rows?: number;
+  busy?: boolean;
   edit: (value: string) => void;
 };
 
-export function Field({ id, tag, hint, text, flaw, kind = "text", rows, edit }: Props) {
+export function Field({ id, tag, hint, text, flaw, kind = "text", rows, busy = false, edit }: Props) {
   const tone = `w-full px-4 py-3 bg-brand-bg rounded-xl border transition-all text-sm outline-none ${
     flaw
       ? "border-red-400 focus:border-red-500"
@@ -28,7 +29,8 @@ export function Field({ id, tag, hint, text, flaw, kind = "text", rows, edit }: 
           placeholder={hint}
           value={text}
           onChange={(event) => edit(event.target.value)}
-          className={`${tone} resize-none`}
+          disabled={busy}
+          className={`${tone} resize-none disabled:cursor-not-allowed disabled:opacity-60`}
         />
       ) : (
         <input
@@ -37,7 +39,8 @@ export function Field({ id, tag, hint, text, flaw, kind = "text", rows, edit }: 
           placeholder={hint}
           value={text}
           onChange={(event) => edit(event.target.value)}
-          className={tone}
+          disabled={busy}
+          className={`${tone} disabled:cursor-not-allowed disabled:opacity-60`}
         />
       )}
       {flaw ? <span className="text-[10px] font-mono text-red-500 font-semibold">{flaw}</span> : null}

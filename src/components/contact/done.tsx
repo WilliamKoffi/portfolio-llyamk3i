@@ -20,17 +20,17 @@ export function Done({ reset }: Props) {
       </div>
       <div>
         <h3 className="font-sans text-xl font-extrabold tracking-tight text-brand-dark sm:text-2xl">
-          E-mail préparé avec succès
+          Message envoyé avec succès
         </h3>
         <p className="mx-auto mt-2 max-w-sm text-xs leading-relaxed text-brand-dark/60 sm:text-sm">
-          Votre application e-mail s'est ouverte avec le message prérempli. Envoyez-le depuis votre messagerie pour finaliser la prise de contact.
+          Votre message a bien été transmis. Je vous répondrai dans les plus brefs délais.
         </p>
       </div>
       <button
         onClick={reset}
         className="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-full border border-brand-dark/10 bg-brand-bg px-6 py-2.5 text-xs font-bold uppercase tracking-widest text-brand-dark transition-colors hover:bg-brand-dark/5"
       >
-        Retourner au formulaire
+        Nouveau message
         <ArrowRight size={12} />
       </button>
     </motion.div>

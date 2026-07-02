@@ -8,6 +8,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
     curl \
     ca-certificates \
     git \
+    git-lfs \
     ripgrep \
     fd-find \
     python3 \
@@ -15,6 +16,7 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive && \
     python3-venv \
     python-is-python3 \
     && ln -sf "$(which fdfind)" /usr/local/bin/fd \
+    && git lfs install --system \
     && apt-get clean -y \
     && rm -rf /var/lib/apt/lists/*
 

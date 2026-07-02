@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "motion/react";
-import { Mail, MapPin, Phone, Send, type LucideIcon } from "lucide-react";
+import { AlertCircle, Mail, MapPin, Phone, Send, type LucideIcon } from "lucide-react";
 import { DEV_INFO } from "../../data";
 import { Draft } from "./draft";
 import { Done } from "./done";
@@ -33,7 +33,7 @@ const fields: Array<{
 ];
 
 export default function Contact() {
-  const { draft, flaws, sent, input, submit, reset } = useContact();
+  const { draft, flaws, busy, sent, notice, input, submit, reset } = useContact();
 
   return (
     <section id="contact" className="relative overflow-hidden bg-brand-bg py-24">
@@ -109,6 +109,12 @@ export default function Contact() {
                 <Done reset={reset} />
               ) : (
                 <motion.form key="contact-form" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onSubmit={submit} className="flex flex-col gap-5">
+                  {notice ? (
+                    <div className="flex items-center gap-2 rounded-xl bg-red-50 p-4 text-xs font-semibold text-red-500">
+                      <AlertCircle size={14} />
+                      <span>{notice}</span>
+                    </div>
+                  ) : null}
                   {fields.map(({ name, id, tag, hint, kind, rows }) => (
                     <div key={name}>
                       <Field
@@ -119,6 +125,7 @@ export default function Contact() {
                         flaw={flaws[name]}
                         kind={kind}
                         rows={rows}
+                        busy={busy}
                         edit={(value) => input(name, value)}
                       />
                     </div>
@@ -126,10 +133,11 @@ export default function Contact() {
                   <button
                     type="submit"
                     id="contact-submit-btn"
+                    disabled={busy}
                     className="group/btn mt-2 flex w-full cursor-pointer items-center justify-center gap-2 rounded-xl bg-brand-dark py-4 text-xs font-bold uppercase tracking-widest text-white shadow-md transition-all duration-300 hover:bg-brand-accent disabled:cursor-not-allowed disabled:bg-brand-dark/30"
                   >
-                    Préparer l'e-mail
-                    <Send size={12} className="transition-transform group-hover/btn:translate-x-0.5" />
+                    {busy ? "Envoi en cours..." : "Envoyer le message"}
+                    {!busy ? <Send size={12} className="transition-transform group-hover/btn:translate-x-0.5" /> : null}
                   </button>
                 </motion.form>
               )}

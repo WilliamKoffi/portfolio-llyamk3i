@@ -1,5 +1,3 @@
-import { DEV_INFO } from "../../data";
-
 export namespace Draft {
   export type Model = {
     name: string;
@@ -31,18 +29,31 @@ export namespace Draft {
     return flaws;
   }
 
-  export function mail(draft: Model): void {
-    const body = [
-      `Nom: ${draft.name}`,
-      `Email: ${draft.email}`,
-      "",
-      draft.message,
-    ].join("\n");
+  export async function send(draft: Model): Promise<boolean> {
+    const payload = new FormData();
+    const key = import.meta.env.VITE_WEB3FORMS_KEY ?? "";
 
-    const link =
-      `mailto:${DEV_INFO.email}?subject=${encodeURIComponent(draft.subject)}` +
-      `&body=${encodeURIComponent(body)}`;
+    payload.append("access_key", key);
+    payload.append("name", draft.name);
+    payload.append("email", draft.email);
+    payload.append("subject", "✨ ✨portfolio " + draft.subject);
+    payload.append("message", draft.message);
 
-    window.location.href = link;
+    try {
+      const request = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: payload,
+      });
+      const data: unknown = await request.json();
+
+      return (
+        typeof data === "object" &&
+        data !== null &&
+        "success" in data &&
+        data.success === true
+      );
+    } catch {
+      return false;
+    }
   }
 }

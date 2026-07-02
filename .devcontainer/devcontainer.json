@@ -6,9 +6,10 @@
     "dockerfile": "Dockerfile",
     "context": "."
   },
-    "remoteUser": "vscode",
+  "remoteUser": "vscode",
   "forwardPorts": [3000],
   "postCreateCommand": "bun install",
+  "postAttachCommand": "bash .devcontainer/setup-keybindings.sh",
   // Configure tool-specific properties.
   "customizations": {
     // Configure properties specific to VS Code.
@@ -16,30 +17,15 @@
       // Add the IDs of extensions you want installed when the container is created.
       "extensions": [
         "oven.bun-vscode",
-        "ms-azuretools.vscode-docker"
+        "ms-azuretools.vscode-docker",
+        "sleistner.vscode-fileutils",
+        "PKief.material-icon-theme",
+        "usernamehw.remove-empty-lines",
+        "dbankier.vscode-quick-select"
       ],
-      "keybindings": [
-        {
-          "key": "ctrl+p",
-          "command": "workbench.action.showCommands"
-        },
-        {
-          "key": "ctrl+o",
-          "command": "workbench.action.quickOpen"
-        },
-        {
-          "key": "ctrl+shift+p",
-          "command": "-workbench.action.showCommands"
-        },
-        {
-          "key": "ctrl+p",
-          "command": "-workbench.action.quickOpen"
-        },
-        {
-          "key": "ctrl+o",
-          "command": "-workbench.action.files.openFile"
-        }
-      ]
+      "settings": {
+        "workbench.iconTheme": "material-icon-theme"
+      }
     }
-}
+  }
 }
