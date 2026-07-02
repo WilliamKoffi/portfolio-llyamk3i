@@ -6,11 +6,16 @@ const links = [
   { id: "a-propos", label: "À propos" },
   { id: "projets", label: "Projets" },
   { id: "services", label: "Services" },
-  { id: "processus", label: "Notre Process" },
+  { id: "processus", label: "Processus" },
   { id: "temoignages", label: "Témoignages" },
 ];
 
 const targets = [...links.map((link) => link.id), "contact"];
+
+function currentHashTarget(): string | null {
+  const target = window.location.hash.replace("#", "");
+  return targets.includes(target) ? target : null;
+}
 
 export function useHeader() {
   const [open, setOpen] = useState(false);
@@ -23,10 +28,20 @@ export function useHeader() {
       setActive(Scroll.locate(targets));
     };
 
-    measure();
-    window.addEventListener("scroll", measure, { passive: true });
+    const scrollToHash = () => {
+      const target = currentHashTarget();
+      if (target) Scroll.to(target, { updateHash: false });
+    };
 
-    return () => window.removeEventListener("scroll", measure);
+    measure();
+    window.requestAnimationFrame(scrollToHash);
+    window.addEventListener("scroll", measure, { passive: true });
+    window.addEventListener("hashchange", scrollToHash);
+
+    return () => {
+      window.removeEventListener("scroll", measure);
+      window.removeEventListener("hashchange", scrollToHash);
+    };
   }, []);
 
   const navigate = (id: string) => {

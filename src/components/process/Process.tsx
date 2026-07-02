@@ -7,10 +7,10 @@ export default function Process() {
   const { tab, pick } = useProcess();
 
   return (
-    <section id="processus" className="py-24 bg-brand-bg relative overflow-hidden">
+    <section className="py-24 bg-brand-bg relative overflow-hidden">
       <div className="absolute top-1/2 left-0 -translate-y-1/2 w-96 h-96 bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div id="processus" className="max-w-7xl mx-auto scroll-mt-24 px-6 md:px-12 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
           <div className="lg:col-span-6 flex flex-col gap-8">
             <div className="flex flex-col gap-6">
@@ -145,7 +145,7 @@ export default function Process() {
                 <span>MÉTHODOLOGIE</span>
               </div>
               <h2 className="font-serif italic text-3xl sm:text-4xl font-light text-brand-dark leading-tight">
-                Processus de Travail
+                Processus de travail
               </h2>
               <div className="h-[1px] w-16 bg-brand-accent mt-3" />
             </div>

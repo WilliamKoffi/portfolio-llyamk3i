@@ -17,20 +17,17 @@ const specifications = [
   "Conteneurisation & DevOps (Docker, FrankenPHP)",
   "Rigueur de test (PHPUnit, Pest, Vitest)",
   "Automatisation de flux & API (n8n)",
-  "Agents IA & Tests Mobile (CrewAI, Maestro)",
+  "Agents IA & Tests mobiles (CrewAI, Maestro)",
 ];
 
 const interests = ["Jeux Vidéo", "Basketball", "Musique"];
 
 export default function About() {
   return (
-    <section
-      id="a-propos"
-      className="relative overflow-hidden bg-brand-bg py-24"
-    >
+    <section className="relative overflow-hidden bg-brand-bg py-24">
       <div className="absolute inset-0 pointer-events-none opacity-[0.02] bg-[linear-gradient(to_right,#1c1917_1px,transparent_1px),linear-gradient(to_bottom,#1c1917_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 md:px-12">
+      <div id="a-propos" className="relative z-10 mx-auto max-w-7xl scroll-mt-24 px-6 md:px-12">
         <div className="mb-16 flex flex-col gap-2 text-center md:text-left">
           <div className="flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-brand-accent md:justify-start">
             <User size={14} />
@@ -145,7 +142,7 @@ export default function About() {
                     <div className="mb-1 flex justify-between text-xs font-bold text-brand-dark">
                       <span>Français</span>
                       <span className="text-brand-accent">
-                        Langue Maternelle (100%)
+                        Langue maternelle (100%)
                       </span>
                     </div>
                     <div className="h-1 w-full overflow-hidden rounded-full bg-brand-dark/5">

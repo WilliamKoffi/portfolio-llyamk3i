@@ -27,6 +27,7 @@ export function Done({ reset }: Props) {
         </p>
       </div>
       <button
+        type="button"
         onClick={reset}
         className="mt-4 inline-flex cursor-pointer items-center gap-2 rounded-full border border-brand-dark/10 bg-brand-bg px-6 py-2.5 text-xs font-bold uppercase tracking-widest text-brand-dark transition-colors hover:bg-brand-dark/5"
       >

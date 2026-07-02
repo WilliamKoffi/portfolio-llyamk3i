@@ -38,11 +38,12 @@ export default function Hero() {
                 Défiler vers le bas
               </span>
               <motion.button
+                type="button"
                 onClick={() => Scroll.to("a-propos")}
                 animate={{ y: [0, 8, 0] }}
                 transition={{ repeat: Infinity, duration: 1.5, ease: "easeInOut" }}
                 className="p-3 bg-white hover:bg-brand-dark hover:text-white rounded-full border border-brand-dark/5 shadow-sm transition-colors cursor-pointer"
-                aria-label="Scroll Down"
+                aria-label="Défiler vers la section À propos"
                 id="hero-scroll-btn"
               >
                 <ArrowDown size={16} />
@@ -92,7 +93,7 @@ export default function Hero() {
               id="hero-spec-text-container"
             >
               <p className="text-xs sm:text-sm font-sans text-brand-dark/70 leading-relaxed font-medium">
-                Spécialisé en développement Web, applications mobiles, architectures React et designs d'interfaces d'exception.
+                Spécialisé en développement Web, applications mobiles, architectures React et interfaces d'exception soignées.
               </p>
             </motion.div>
 
@@ -145,6 +146,7 @@ export default function Hero() {
           id="hero-actions"
         >
           <button
+            type="button"
             onClick={() => Scroll.to("projets")}
             className="px-8 py-3.5 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-accent transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
             id="hero-action-projects"
@@ -153,6 +155,7 @@ export default function Hero() {
           </button>
 
           <button
+            type="button"
             onClick={() => Scroll.to("contact")}
             className="px-8 py-3.5 bg-white text-brand-dark border border-brand-dark/20 text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-dark/5 transition-all duration-300 shadow-sm cursor-pointer flex items-center gap-2"
             id="hero-action-contact"
@@ -175,7 +178,7 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full mt-8 relative z-10 flex justify-between items-center text-[10px] font-mono text-brand-dark/40">
         <span>{DEV_INFO.name.toUpperCase()} — PORTFOLIO 2026</span>
-        <span>REPRÉSENTATION CRÉATIVE UI/UX</span>
+        <span>EXPÉRIENCE WEB & MOBILE</span>
       </div>
     </section>
   );

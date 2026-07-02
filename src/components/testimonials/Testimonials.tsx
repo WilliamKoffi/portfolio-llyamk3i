@@ -4,8 +4,8 @@ import { Motion } from "./animate";
 
 export default function Testimonials() {
   return (
-    <section id="temoignages" className="py-24 bg-white relative">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <section className="py-24 bg-white relative">
+      <div id="temoignages" className="max-w-7xl mx-auto scroll-mt-24 px-6 md:px-12 relative z-10">
         <header className="flex flex-col gap-2 mb-16 text-center">
           <div className="flex items-center gap-2 justify-center text-brand-accent text-xs font-mono tracking-[0.3em] font-semibold uppercase">
             <MessageSquareQuote size={14} />

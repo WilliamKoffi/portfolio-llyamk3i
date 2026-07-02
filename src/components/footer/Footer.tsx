@@ -1,4 +1,4 @@
-import { ArrowUp, Facebook, Github, Linkedin } from "lucide-react";
+import { ArrowUp, Facebook, Github, Linkedin, Music2 } from "lucide-react";
 import { DEV_INFO } from "../../data";
 import { Scroll } from "./scroll";
 
@@ -7,7 +7,7 @@ const links = [
   { id: "a-propos", label: "À propos" },
   { id: "projets", label: "Projets" },
   { id: "services", label: "Services" },
-  { id: "processus", label: "Notre Process" },
+  { id: "processus", label: "Processus" },
   { id: "temoignages", label: "Témoignages" },
 ];
 
@@ -22,6 +22,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           <div className="md:col-span-5 flex flex-col gap-6">
             <button
+              type="button"
+              aria-label="Retour à l&apos;accueil"
               onClick={() => Scroll.to("accueil")}
               className="font-serif italic text-3xl font-semibold tracking-tight text-white cursor-pointer group text-left w-fit"
             >
@@ -32,6 +34,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-3">
               <a
+                aria-label="Profil LinkedIn"
                 href={DEV_INFO.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -40,6 +43,7 @@ export default function Footer() {
                 <Linkedin size={16} />
               </a>
               <a
+                aria-label="Profil GitHub"
                 href={DEV_INFO.github}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -48,12 +52,22 @@ export default function Footer() {
                 <Github size={16} />
               </a>
               <a
+                aria-label="Profil Facebook"
                 href={DEV_INFO.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2.5 bg-white/5 hover:bg-brand-accent hover:text-white rounded-full transition-all"
               >
                 <Facebook size={16} />
+              </a>
+              <a
+                aria-label="Profil TikTok"
+                href={DEV_INFO.tiktok}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="p-2.5 bg-white/5 hover:bg-brand-accent hover:text-white rounded-full transition-all"
+              >
+                <Music2 size={16} />
               </a>
             </div>
           </div>
@@ -66,6 +80,7 @@ export default function Footer() {
               {links.map((link) => (
                 <li key={link.id}>
                   <button
+                    type="button"
                     onClick={() => Scroll.to(link.id)}
                     className="text-xs sm:text-sm text-white/60 hover:text-white transition-colors cursor-pointer text-left"
                   >
@@ -87,6 +102,7 @@ export default function Footer() {
             </div>
 
             <button
+              type="button"
               onClick={() => Scroll.to("contact")}
               className="mt-2 w-fit inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-accent-light hover:text-white transition-colors cursor-pointer"
             >
@@ -100,10 +116,12 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-[10px] font-mono text-white/40 text-center sm:text-left">
             <span>&copy; {year} {DEV_INFO.name}. Tous droits réservés.</span>
             <span className="hidden sm:inline">|</span>
-            <span>Réalisé avec excellence technique et design suisse</span>
+            <span>Réalisé avec soin, performance et précision</span>
           </div>
 
           <button
+            type="button"
+            aria-label="Retour en haut de page"
             onClick={() => Scroll.to("top")}
             className="p-3 bg-white/5 hover:bg-brand-accent rounded-full border border-white/10 transition-colors cursor-pointer group"
             title="Retour en haut"

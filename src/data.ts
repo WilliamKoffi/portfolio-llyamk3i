@@ -16,6 +16,7 @@ export const DEV_INFO = {
   github: "https://github.com/WilliamKoffi",
   linkedin: "https://linkedin.com/in/William-koffi-9a507154",
   facebook: "https://facebook.com/konanwilliam.koffi.5",
+  tiktok: "https://www.tiktok.com/@llyam_k3i",
 };
 
 export const PROJECTS: Project[] = [
@@ -36,7 +37,7 @@ export const PROJECTS: Project[] = [
     category: "Dashboard / SaaS",
     image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
     technologies: ["Nuxt.js", "Vue.js", "TypeScript", "Tailwind CSS", "Pinia", "REST API"],
-    demoUrl: "https://lawyer-nine-gamma.vercel.app/?email=jone%40doe.com&name=Jone+Doe&phone=%2B1+%28982%29+466-6289&image=https%3A%2F%2Fwww.bipycy.org.uk&gender=M",
+    demoUrl: "https://lawyer-nine-gamma.vercel.app/?email=jean.dupont%40entreprise.com&name=Jean+Dupont&phone=%2B1+%28982%29+466-6289&image=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1589829545856-d10d557cf95f%3Fauto%3Dformat%26fit%3Dcrop%26w%3D640%26q%3D80&gender=M",
     githubUrl: "https://github.com/WilliamKoffi"
   },
   {

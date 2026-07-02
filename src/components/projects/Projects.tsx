@@ -17,10 +17,10 @@ export default function Projects() {
   const { category, pick, subset } = usePortfolio();
 
   return (
-    <section id="projets" className="py-24 bg-brand-bg relative overflow-hidden">
+    <section className="py-24 bg-brand-bg relative overflow-hidden">
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-brand-accent/5 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div id="projets" className="max-w-7xl mx-auto scroll-mt-24 px-6 md:px-12 relative z-10">
         <header className="flex flex-col gap-2 mb-12 text-center md:text-left">
           <div className="flex items-center gap-2 justify-center md:justify-start text-brand-accent text-xs font-mono tracking-[0.3em] font-semibold uppercase">
             <FolderGit2 size={14} />

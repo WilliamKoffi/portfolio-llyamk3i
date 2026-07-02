@@ -25,6 +25,10 @@ export function Field({ id, tag, hint, text, flaw, kind = "text", rows, busy = f
       {rows ? (
         <textarea
           id={id}
+          name={id.replace("contact-", "")}
+          required
+          aria-invalid={Boolean(flaw)}
+          aria-describedby={flaw ? `${id}-error` : undefined}
           rows={rows}
           placeholder={hint}
           value={text}
@@ -35,6 +39,10 @@ export function Field({ id, tag, hint, text, flaw, kind = "text", rows, busy = f
       ) : (
         <input
           id={id}
+          name={id.replace("contact-", "")}
+          required
+          aria-invalid={Boolean(flaw)}
+          aria-describedby={flaw ? `${id}-error` : undefined}
           type={kind}
           placeholder={hint}
           value={text}
@@ -43,7 +51,7 @@ export function Field({ id, tag, hint, text, flaw, kind = "text", rows, busy = f
           className={`${tone} disabled:cursor-not-allowed disabled:opacity-60`}
         />
       )}
-      {flaw ? <span className="text-[10px] font-mono text-red-500 font-semibold">{flaw}</span> : null}
+      {flaw ? <span id={`${id}-error`} className="text-[10px] font-mono text-red-500 font-semibold">{flaw}</span> : null}
     </div>
   );
 }
