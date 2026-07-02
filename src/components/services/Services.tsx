@@ -20,7 +20,7 @@ export default function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="services-cards-grid-list">
           {SERVICES.map((item, index) => {
-            const { description, iconName: icon, id, title } = item;
+            const { description, icon, id, title } = item;
             const Graphic = Catalog.graphic(icon);
 
             return (

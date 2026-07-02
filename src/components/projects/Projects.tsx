@@ -70,7 +70,7 @@ export default function Projects() {
 }
 
 function Preview({ project }: { project: Project }) {
-  const valid = Boolean(project.demoUrl && project.demoUrl !== "#");
+  const valid = Boolean(project.demo && project.demo !== "#");
   const click = () => Showcase.view(project.title);
 
   const content = (
@@ -102,7 +102,7 @@ function Preview({ project }: { project: Project }) {
 
   return valid ? (
     <a
-      href={project.demoUrl}
+      href={project.demo}
       target="_blank"
       rel="noopener noreferrer"
       className="relative aspect-video w-full overflow-hidden bg-brand-dark/5 block cursor-pointer"
@@ -122,10 +122,10 @@ function Preview({ project }: { project: Project }) {
 }
 
 function Details({ project }: { project: Project }) {
-  const valid = Boolean(project.demoUrl && project.demoUrl !== "#");
+  const valid = Boolean(project.demo && project.demo !== "#");
   const click = () => Showcase.view(project.title);
   const source = (event: MouseEvent<HTMLAnchorElement>) => {
-    if (project.githubUrl === "#") Showcase.source(project.title, event);
+    if (project.source === "#") Showcase.source(project.title, event);
   };
 
   return (
@@ -150,7 +150,7 @@ function Details({ project }: { project: Project }) {
       <div className="flex items-center justify-between mt-8 pt-5 border-t border-brand-dark/5">
         {valid ? (
           <a
-            href={project.demoUrl}
+            href={project.demo}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-dark hover:text-brand-accent transition-colors cursor-pointer group/btn"
@@ -171,7 +171,7 @@ function Details({ project }: { project: Project }) {
         )}
 
         <a
-          href={project.githubUrl}
+          href={project.source}
           onClick={source}
           target="_blank"
           rel="noopener noreferrer"

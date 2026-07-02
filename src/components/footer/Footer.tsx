@@ -1,6 +1,6 @@
 import { ArrowUp, Facebook, Github, Linkedin, Music2 } from "lucide-react";
 import { DEV_INFO } from "../../data";
-import { Scroll } from "./scroll";
+import { Scroll } from "../scroll";
 
 const links = [
   { id: "accueil", label: "Accueil" },

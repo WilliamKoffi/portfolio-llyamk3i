@@ -162,7 +162,7 @@ export default function Process() {
                   id={`process-step-item-${step.id}`}
                 >
                   <div className="font-serif italic text-3xl sm:text-4xl font-semibold text-brand-accent/20 group-hover:text-brand-accent transition-colors duration-300 leading-none">
-                    {step.numberStr}
+                    {step.number}
                   </div>
 
                   <div className="flex flex-col gap-1">

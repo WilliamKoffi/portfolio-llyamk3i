@@ -5,15 +5,15 @@ export interface Project {
   category: string;
   image?: string;
   technologies: string[];
-  demoUrl?: string;
-  githubUrl?: string;
+  demo?: string;
+  source?: string;
 }
 
 export interface Service {
   id: string;
   title: string;
   description: string;
-  iconName: string;
+  icon: string;
 }
 
 export interface Testimonial {
@@ -45,7 +45,7 @@ export interface Education {
 
 export interface ProcessStep {
   id: number;
-  numberStr: string;
+  number: string;
   title: string;
   description: string;
 }

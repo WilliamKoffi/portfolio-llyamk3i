@@ -27,8 +27,8 @@ export const PROJECTS: Project[] = [
     category: "Application Web / SaaS",
     image: "https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80",
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vercel", "Framer Motion"],
-    demoUrl: "https://elite-auto-henna.vercel.app/",
-    githubUrl: "https://github.com/WilliamKoffi"
+    demo: "https://elite-auto-henna.vercel.app/",
+    source: "https://github.com/WilliamKoffi"
   },
   {
     id: "proj-lawyer",
@@ -37,8 +37,8 @@ export const PROJECTS: Project[] = [
     category: "Dashboard / SaaS",
     image: "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=800&q=80",
     technologies: ["Nuxt.js", "Vue.js", "TypeScript", "Tailwind CSS", "Pinia", "REST API"],
-    demoUrl: "https://lawyer-nine-gamma.vercel.app/?email=jean.dupont%40entreprise.com&name=Jean+Dupont&phone=%2B1+%28982%29+466-6289&image=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1589829545856-d10d557cf95f%3Fauto%3Dformat%26fit%3Dcrop%26w%3D640%26q%3D80&gender=M",
-    githubUrl: "https://github.com/WilliamKoffi"
+    demo: "https://lawyer-nine-gamma.vercel.app/?email=jean.dupont%40entreprise.com&name=Jean+Dupont&phone=%2B1+%28982%29+466-6289&image=https%3A%2F%2Fimages.unsplash.com%2Fphoto-1589829545856-d10d557cf95f%3Fauto%3Dformat%26fit%3Dcrop%26w%3D640%26q%3D80&gender=M",
+    source: "https://github.com/WilliamKoffi"
   },
   {
     id: "proj-lingerie",
@@ -47,8 +47,8 @@ export const PROJECTS: Project[] = [
     category: "E-Commerce",
     image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80",
     technologies: ["Nuxt.js", "Vue.js", "Tailwind CSS", "State Management", "E-Commerce API"],
-    demoUrl: "https://lingerie-puce.vercel.app/",
-    githubUrl: "https://github.com/WilliamKoffi"
+    demo: "https://lingerie-puce.vercel.app/",
+    source: "https://github.com/WilliamKoffi"
   },
   {
     id: "proj-1",
@@ -57,8 +57,8 @@ export const PROJECTS: Project[] = [
     category: "E-Commerce",
     image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=800&q=80",
     technologies: ["Laravel", "Filament PHP", "MySQL", "Tailwind CSS", "REST API", "PHP"],
-    demoUrl: "https://univers-des-boutchous.com",
-    githubUrl: "https://github.com/WilliamKoffi"
+    demo: "https://univers-des-boutchous.com",
+    source: "https://github.com/WilliamKoffi"
   }
 ];
 
@@ -67,37 +67,37 @@ export const SERVICES: Service[] = [
     id: "srv-1",
     title: "Développement Backend",
     description: "Conception d'architectures serveurs robustes et d'APIs performantes et sécurisées avec PHP, Laravel, Symfony et Filament PHP.",
-    iconName: "Cpu"
+    icon: "Cpu"
   },
   {
     id: "srv-2",
     title: "Applications Web",
     description: "Développement d'applications Web interactives, réactives et fluides avec React, Vue.js, Next.js, Nuxt.js et TypeScript.",
-    iconName: "Layers"
+    icon: "Layers"
   },
   {
     id: "srv-3",
     title: "Applications Mobiles",
     description: "Développement d'interfaces mobiles hybrides d'une grande fluidité adaptées aux besoins spécifiques des utilisateurs modernes.",
-    iconName: "Smartphone"
+    icon: "Smartphone"
   },
   {
     id: "srv-4",
     title: "Audit & Cybersécurité",
     description: "Mise en œuvre de solutions de cybersécurité, audits de sécurité applicative, tests de pénétration et protection des données sensibles.",
-    iconName: "Zap"
+    icon: "Zap"
   },
   {
     id: "srv-5",
     title: "Automatisation & IA",
     description: "Création de workflows automatisés avec n8n, orchestration d'agents d'intelligence artificielle autonomes avec CrewAI, et automatisation de tests mobiles avec Maestro.",
-    iconName: "Workflow"
+    icon: "Workflow"
   },
   {
     id: "srv-6",
     title: "DevOps & Conteneurisation",
     description: "Déploiement et gestion d'infrastructures hautement disponibles avec Docker, FrankenPHP, Apache, Linux Bash, Git et tests automatisés.",
-    iconName: "Globe"
+    icon: "Globe"
   }
 ];
 
@@ -155,25 +155,25 @@ export const EDUCATION: Education[] = [
 export const PROCESS_STEPS: ProcessStep[] = [
   {
     id: 1,
-    numberStr: "01",
+    number: "01",
     title: "Cadrage & Architecture",
     description: "Analyse approfondie de vos objectifs techniques et modélisation de l'architecture backend et de la base de données pour un produit hautement évolutif."
   },
   {
     id: 2,
-    numberStr: "02",
+    number: "02",
     title: "Design & Interfaces",
     description: "Conception d'interfaces Pixel Perfect adaptatives et modernes avec Tailwind CSS, optimisées pour offrir la meilleure expérience utilisateur possible."
   },
   {
     id: 3,
-    numberStr: "03",
+    number: "03",
     title: "Développement & Tests",
     description: "Codage propre et rigoureux (Laravel, React/Vue) associé à des tests approfondis (PHPUnit, Pest, Vitest) pour garantir une stabilité à toute épreuve."
   },
   {
     id: 4,
-    numberStr: "04",
+    number: "04",
     title: "Sécurisation & Déploiement",
     description: "Audit de sécurité rigoureux, conteneurisation Docker, configuration serveur (FrankenPHP/Apache) et mise en ligne avec un monitoring continu."
   }

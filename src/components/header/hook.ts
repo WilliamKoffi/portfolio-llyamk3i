@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Scroll } from "./scroll";
+import { Scroll } from "../scroll";
 
 const links = [
   { id: "accueil", label: "Accueil" },
@@ -12,7 +12,7 @@ const links = [
 
 const targets = [...links.map((link) => link.id), "contact"];
 
-function currentHashTarget(): string | null {
+function current(): string | null {
   const target = window.location.hash.replace("#", "");
   return targets.includes(target) ? target : null;
 }
@@ -28,19 +28,19 @@ export function useHeader() {
       setActive(Scroll.locate(targets));
     };
 
-    const scrollToHash = () => {
-      const target = currentHashTarget();
-      if (target) Scroll.to(target, { updateHash: false });
+    const restore = () => {
+      const target = current();
+      if (target) Scroll.to(target, { hash: false });
     };
 
     measure();
-    window.requestAnimationFrame(scrollToHash);
+    window.requestAnimationFrame(restore);
     window.addEventListener("scroll", measure, { passive: true });
-    window.addEventListener("hashchange", scrollToHash);
+    window.addEventListener("hashchange", restore);
 
     return () => {
       window.removeEventListener("scroll", measure);
-      window.removeEventListener("hashchange", scrollToHash);
+      window.removeEventListener("hashchange", restore);
     };
   }, []);
 

@@ -1,14 +1,19 @@
-function updateHash(id: string): void {
-  const target = id === "accueil" ? `${window.location.pathname}${window.location.search}` : `#${id}`;
+function hash(id: string): void {
+  const target = id === "accueil" || id === "top" ? `${window.location.pathname}${window.location.search}` : `#${id}`;
   window.history.pushState(null, "", target);
 }
 
 export namespace Scroll {
-  export function to(id: string, options: { updateHash?: boolean } = {}): void {
+  export function to(id: string, options: { hash?: boolean } = {}): void {
+    if (options.hash !== false) hash(id);
+
+    if (id === "top") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
     const node = document.getElementById(id);
     if (!node) return;
-
-    if (options.updateHash !== false) updateHash(id);
 
     const offset = 80;
     const bounds = node.getBoundingClientRect().top;

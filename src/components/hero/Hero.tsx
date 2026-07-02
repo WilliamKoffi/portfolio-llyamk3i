@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 import { ArrowDown, Briefcase, Download, Mail } from "lucide-react";
 import resume from "../../../assets/william-koffi-cv.pdf";
 import { DEV_INFO } from "../../data";
-import { Scroll } from "./scroll";
+import { Scroll } from "../scroll";
 
 export default function Hero() {
   return (
