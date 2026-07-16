@@ -1,6 +1,5 @@
 import { motion } from "motion/react";
 import { ArrowDown, Briefcase, Download, Mail } from "lucide-react";
-import resume from "../../../assets/william-koffi-cv.pdf";
 import { DEV_INFO } from "../../data";
 import { Scroll } from "../scroll";
 
@@ -165,7 +164,9 @@ export default function Hero() {
           </button>
 
           <a
-            href={resume}
+            href="https://docs.google.com/presentation/d/1ezLtdSK7UxwMeOkzaKwbUE9rJlJQ6UnFOjMUnEKmeCA/export?format=pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             download="william-koffi-cv.pdf"
             className="px-8 py-3.5 bg-transparent text-brand-dark hover:text-brand-accent text-xs font-bold uppercase tracking-widest rounded-full transition-all duration-300 cursor-pointer flex items-center gap-2"
             id="hero-action-cv"

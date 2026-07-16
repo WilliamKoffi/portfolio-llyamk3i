@@ -13,6 +13,7 @@ import Process from "./components/process/Process";
 import Testimonials from "./components/testimonials/Testimonials";
 import Contact from "./components/contact/Contact";
 import Footer from "./components/footer/Footer";
+import ContactFloatingButton from "./components/ContactFloatingButton";
 
 export default function App() {
   return (
@@ -49,6 +50,9 @@ export default function App() {
 
       {/* Structured Footer */}
       <Footer />
+
+      {/* Mobile Floating Contact Anchor Button */}
+      <ContactFloatingButton />
     </div>
   );
 }

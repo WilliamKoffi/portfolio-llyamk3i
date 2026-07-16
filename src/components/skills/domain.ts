@@ -26,6 +26,7 @@ export namespace Catalog {
         { name: "PHP / JS / TS", level: 95, years: "6 ans" },
         { name: "Laravel & Filament", level: 90, years: "5 ans" },
         { name: "Symfony & API REST", level: 85, years: "4 ans" },
+        { name: "Java & Spring Boot", level: 80, years: "3 ans" },
         { name: "Python & Rust", level: 60, years: "2 ans" }
       ]
     },

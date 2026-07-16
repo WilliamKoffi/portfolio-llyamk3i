@@ -59,6 +59,35 @@ export const PROJECTS: Project[] = [
     technologies: ["Laravel", "Filament PHP", "MySQL", "Tailwind CSS", "REST API", "PHP"],
     demo: "https://univers-des-boutchous.com",
     source: "https://github.com/WilliamKoffi"
+  },
+  {
+    id: "proj-codesnippets",
+    title: "CodeSnippets",
+    description: "Application full-stack de partage de snippets de code. Conçue avec un frontend Angular moderne (Angular Signals, composants autonomes) et un backend Spring Boot 4.1 robuste sous Java 21, connectée à une base de données PostgreSQL et conteneurisée pour le développement local.",
+    category: "Application Web / SaaS",
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80",
+    technologies: ["Java", "Spring Boot", "Angular", "TypeScript", "Tailwind CSS", "PostgreSQL", "Docker", "Maven"],
+    source: "https://github.com/WilliamKoffi/CodeSnippets"
+  },
+  {
+    id: "proj-olkhov",
+    title: "Cabinet de Maître William Koffi",
+    description: "Site vitrine professionnel haut de gamme pour un cabinet d'avocats. Présentation d'expertises juridiques (Droit des affaires OHADA, sécurisation foncière, successions) avec formulaires de contact et une interface moderne et épurée.",
+    category: "Application Web / SaaS",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "Framer Motion"],
+    demo: "https://olkhov.vercel.app/",
+    source: "https://github.com/WilliamKoffi/olkhov"
+  },
+  {
+    id: "proj-lehpar",
+    title: "L'Essence de Luxe",
+    description: "Boutique e-commerce haut de gamme dédiée aux parfums de prestige à Abidjan. Catalogue raffiné et intégration d'un tunnel d'achat et de commande instantanée via l'API WhatsApp.",
+    category: "E-Commerce",
+    image: "https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=800",
+    technologies: ["React", "TypeScript", "Tailwind CSS", "Vite", "WhatsApp API", "Framer Motion"],
+    demo: "https://lehpar.vercel.app/",
+    source: "https://github.com/WilliamKoffi/lehpar"
   }
 ];
 
