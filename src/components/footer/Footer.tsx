@@ -1,15 +1,9 @@
-import { ArrowUp, Facebook, Github, Linkedin, Music2 } from "lucide-react";
-import { DEV_INFO } from "../../data";
-import { Scroll } from "../scroll";
+"use client";
 
-const links = [
-  { id: "accueil", label: "Accueil" },
-  { id: "a-propos", label: "À propos" },
-  { id: "projets", label: "Projets" },
-  { id: "services", label: "Services" },
-  { id: "processus", label: "Processus" },
-  { id: "temoignages", label: "Témoignages" },
-];
+import { ArrowUp, Facebook, Github, Linkedin, Music2 } from "lucide-react";
+import { DEV_INFO } from "@/profile";
+import { NAV_LINKS } from "@/navigation";
+import { Scroll } from "../scroll";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -77,7 +71,7 @@ export default function Footer() {
               Navigation
             </h3>
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
-              {links.map((link) => (
+              {NAV_LINKS.map((link) => (
                 <li key={link.id}>
                   <button
                     type="button"

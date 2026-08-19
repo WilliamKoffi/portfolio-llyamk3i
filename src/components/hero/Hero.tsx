@@ -1,7 +1,10 @@
+"use client";
+
 import { motion } from "motion/react";
 import { ArrowDown, Briefcase, Download, Mail } from "lucide-react";
-import { DEV_INFO } from "../../data";
+import { DEV_INFO } from "@/profile";
 import { Scroll } from "../scroll";
+import { HERO_CONTENT } from "./content";
 
 export default function Hero() {
   return (
@@ -34,7 +37,7 @@ export default function Hero() {
 
             <div className="hidden lg:block mt-12">
               <span className="text-[10px] font-mono tracking-[0.3em] uppercase text-brand-dark/40 block mb-3">
-                Défiler vers le bas
+                {HERO_CONTENT.scrollHint}
               </span>
               <motion.button
                 type="button"
@@ -58,7 +61,7 @@ export default function Hero() {
               className="absolute top-6 sm:top-12 md:top-16 z-0 text-center select-none"
             >
               <h1 className="font-serif italic text-7xl sm:text-[6.5rem] md:text-[8rem] font-light text-brand-dark/40 tracking-tight leading-none whitespace-nowrap">
-                Salut, moi c'est
+                {HERO_CONTENT.greeting}
               </h1>
             </motion.div>
 
@@ -92,13 +95,13 @@ export default function Hero() {
               id="hero-spec-text-container"
             >
               <p className="text-xs sm:text-sm font-sans text-brand-dark/70 leading-relaxed font-medium">
-                Spécialisé en développement Web, applications mobiles, architectures React et interfaces d'exception soignées.
+                {HERO_CONTENT.specification}
               </p>
             </motion.div>
 
             <div className="hidden lg:flex items-center gap-1.5 text-brand-accent justify-end font-mono text-[10px] tracking-widest font-bold">
               <Briefcase size={12} />
-              <span>CRAFT & PERFORMANCE</span>
+              <span>{HERO_CONTENT.tagline}</span>
             </div>
           </div>
         </div>
@@ -113,10 +116,10 @@ export default function Hero() {
               id="hero-text-left"
             >
               <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-brand-accent font-bold block mb-1">
-                CONCEPTEUR DIGITAL
+                {HERO_CONTENT.eyebrowLeft}
               </span>
               <h2 className="font-sans font-extrabold text-4xl sm:text-6xl lg:text-[5rem] tracking-tighter text-brand-dark uppercase leading-none">
-                JE SUIS WILLIAM
+                {HERO_CONTENT.headlineLeft}
               </h2>
             </motion.div>
 
@@ -128,10 +131,10 @@ export default function Hero() {
               id="hero-text-right"
             >
               <span className="text-[10px] font-mono tracking-[0.4em] uppercase text-brand-dark/40 block mb-1">
-                EXPERTISE ET CODE
+                {HERO_CONTENT.eyebrowRight}
               </span>
               <h2 className="font-sans font-extrabold text-3xl sm:text-5xl lg:text-[4rem] tracking-tight text-stroke uppercase leading-none">
-                DEV WEB & MOBILE
+                {HERO_CONTENT.headlineRight}
               </h2>
             </motion.div>
           </div>
@@ -150,7 +153,7 @@ export default function Hero() {
             className="px-8 py-3.5 bg-brand-dark text-white text-xs font-bold uppercase tracking-widest rounded-full hover:bg-brand-accent transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer"
             id="hero-action-projects"
           >
-            Voir mes projets
+            {HERO_CONTENT.actions.projects}
           </button>
 
           <button
@@ -160,26 +163,26 @@ export default function Hero() {
             id="hero-action-contact"
           >
             <Mail size={14} />
-            Me contacter
+            {HERO_CONTENT.actions.contact}
           </button>
 
           <a
-            href="https://docs.google.com/presentation/d/1ezLtdSK7UxwMeOkzaKwbUE9rJlJQ6UnFOjMUnEKmeCA/export?format=pdf"
+            href={HERO_CONTENT.cvUrl}
             target="_blank"
             rel="noopener noreferrer"
-            download="william-koffi-cv.pdf"
+            download={HERO_CONTENT.cvFilename}
             className="px-8 py-3.5 bg-transparent text-brand-dark hover:text-brand-accent text-xs font-bold uppercase tracking-widest rounded-full transition-all duration-300 cursor-pointer flex items-center gap-2"
             id="hero-action-cv"
           >
             <Download size={14} />
-            Télécharger mon CV
+            {HERO_CONTENT.actions.cv}
           </a>
         </motion.div>
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full mt-8 relative z-10 flex justify-between items-center text-[10px] font-mono text-brand-dark/40">
-        <span>{DEV_INFO.name.toUpperCase()} — PORTFOLIO 2026</span>
-        <span>EXPÉRIENCE WEB & MOBILE</span>
+        <span>{DEV_INFO.name.toUpperCase()} — {HERO_CONTENT.footerTagline}</span>
+        <span>{HERO_CONTENT.footerRight}</span>
       </div>
     </section>
   );

@@ -1,9 +1,14 @@
 node_modules/
 build/
 dist/
+.next/
+out/
 coverage/
 .DS_Store
 *.log
 .env*
 !.env.example
+next-env.d.ts
+*.tsbuildinfo
+.playwright-mcp/
 trash/

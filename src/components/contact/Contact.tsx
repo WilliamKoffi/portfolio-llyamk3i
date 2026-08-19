@@ -1,7 +1,9 @@
+"use client";
+
 import { AnimatePresence, motion } from "motion/react";
 import { AlertCircle, Mail, MapPin, Phone, Send, type LucideIcon } from "lucide-react";
-import contactFreelanceCode from "../../../assets/contact-freelance-code.png";
-import { DEV_INFO } from "../../data";
+import contactFreelanceCode from "@/assets/contact-freelance-code.png";
+import { DEV_INFO } from "@/profile";
 import { Draft } from "./draft";
 import { Done } from "./done";
 import { Field } from "./field";
@@ -60,7 +62,7 @@ export default function Contact() {
               transition={{ duration: 0.7, ease: "easeOut" }}
               className="relative flex min-h-[560px] w-full flex-col justify-between overflow-hidden rounded-3xl bg-brand-dark bg-cover bg-center p-8 shadow-xl sm:min-h-[640px] sm:p-10 lg:h-full"
               id="contact-product-image"
-              style={{ backgroundImage: "url(" + contactFreelanceCode + ")" }}
+              style={{ backgroundImage: "url(" + contactFreelanceCode.src + ")" }}
             >
               <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-dark/80 via-brand-dark/35 to-brand-dark/90" />
 

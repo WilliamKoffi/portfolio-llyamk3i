@@ -1,17 +1,11 @@
+"use client";
+
 import { ArrowUpRight, ExternalLink, FolderGit2, Github } from "lucide-react";
 import type { MouseEvent } from "react";
 import { Motion } from "./animate";
+import { PROJECT_CATEGORIES, type Project } from "./content";
 import { Showcase } from "./domain";
 import { usePortfolio } from "./hook";
-import type { Project } from "../../types";
-
-const GROUPS = [
-  "Tous",
-  "Application Web / SaaS",
-  "Application Mobile (iOS & Android)",
-  "E-Commerce",
-  "Dashboard / SaaS"
-];
 
 export default function Projects() {
   const { category, pick, subset } = usePortfolio();
@@ -33,7 +27,7 @@ export default function Projects() {
         </header>
 
         <nav className="flex flex-wrap gap-2.5 mb-12 justify-center md:justify-start" id="project-filters">
-          {GROUPS.map((group) => (
+          {PROJECT_CATEGORIES.map((group) => (
             <button
               key={group}
               onClick={() => pick(group)}

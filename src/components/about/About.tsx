@@ -1,26 +1,10 @@
+"use client";
+
 import { motion } from "motion/react";
-import { Sparkles, Code, User, Award } from "lucide-react";
-import { DEV_INFO as developer } from "../../data";
+import { User } from "lucide-react";
+import { DEV_INFO as developer } from "@/profile";
 import { Animate } from "./animate";
-
-const statistics = [
-  { value: "6+", label: "Années d'Expérience", icon: Award },
-  { value: "45+", label: "Projets Livrés", icon: Code },
-  { value: "99%", label: "Clients Satisfaits", icon: Sparkles },
-];
-
-const specifications = [
-  "Architecture Backend (Laravel, PHP, Symfony)",
-  "Interfaces réactives (React, Vue, Nuxt, Tailwind)",
-  "Développement Mobile hybride",
-  "Cybersécurité applicative (Audits & Pénétration)",
-  "Conteneurisation & DevOps (Docker, FrankenPHP)",
-  "Rigueur de test (PHPUnit, Pest, Vitest)",
-  "Automatisation de flux & API (n8n)",
-  "Agents IA & Tests mobiles (CrewAI, Maestro)",
-];
-
-const interests = ["Jeux Vidéo", "Basketball", "Musique"];
+import { INTERESTS, LANGUAGES, PULL_QUOTE, SPECIFICATIONS, STATISTICS } from "./content";
 
 export default function About() {
   return (
@@ -42,7 +26,7 @@ export default function About() {
         <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-12">
           <div className="order-2 flex flex-col gap-6 lg:order-1 lg:col-span-5">
             <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 lg:grid-cols-1">
-              {statistics.map((statistic, index) => (
+              {STATISTICS.map((statistic, index) => (
                 <motion.div
                   key={index}
                   {...Animate.reveal(index * 0.15)}
@@ -71,7 +55,7 @@ export default function About() {
             >
               <div className="absolute top-0 right-0 h-32 w-32 rounded-full bg-brand-accent/10 blur-2xl" />
               <p className="relative z-10 font-serif text-lg italic leading-relaxed text-white/90">
-                "Un bon code ne se contente pas de fonctionner. Il doit être élégant, robuste et offrir une expérience utilisateur si fluide qu'elle en devient invisible."
+                "{PULL_QUOTE}"
               </p>
               <div className="relative z-10 mt-4 flex items-center gap-3">
                 <div className="h-0.5 w-6 bg-brand-accent" />
@@ -117,7 +101,7 @@ export default function About() {
               className="mt-4 grid grid-cols-1 gap-4 border-t border-brand-dark/10 pt-6 sm:grid-cols-2"
               id="specifications"
             >
-              {specifications.map((specification, index) => (
+              {SPECIFICATIONS.map((specification, index) => (
                 <div
                   key={index}
                   className="flex items-center gap-3 text-xs font-semibold text-brand-dark/90 sm:text-sm"
@@ -138,28 +122,22 @@ export default function About() {
                   LANGUES
                 </h4>
                 <div className="flex flex-col gap-3">
-                  <div>
-                    <div className="mb-1 flex justify-between text-xs font-bold text-brand-dark">
-                      <span>Français</span>
-                      <span className="text-brand-accent">
-                        Langue maternelle (100%)
-                      </span>
+                  {LANGUAGES.map((language) => (
+                    <div key={language.name}>
+                      <div className="mb-1 flex justify-between text-xs font-bold text-brand-dark">
+                        <span>{language.name}</span>
+                        <span className={language.primary ? "text-brand-accent" : "text-brand-accent/70"}>
+                          {language.note}
+                        </span>
+                      </div>
+                      <div className="h-1 w-full overflow-hidden rounded-full bg-brand-dark/5">
+                        <div
+                          className="h-full rounded-full bg-brand-accent"
+                          style={{ width: `${language.level}%` }}
+                        />
+                      </div>
                     </div>
-                    <div className="h-1 w-full overflow-hidden rounded-full bg-brand-dark/5">
-                      <div className="h-full w-full rounded-full bg-brand-accent" />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="mb-1 flex justify-between text-xs font-bold text-brand-dark">
-                      <span>Anglais</span>
-                      <span className="text-brand-accent/70">
-                        Intermédiaire (65%)
-                      </span>
-                    </div>
-                    <div className="h-1 w-full overflow-hidden rounded-full bg-brand-dark/5">
-                      <div className="h-full w-[65%] rounded-full bg-brand-accent" />
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
@@ -168,7 +146,7 @@ export default function About() {
                   CENTRES D&apos;INTÉRÊT
                 </h4>
                 <div className="flex flex-wrap gap-2">
-                  {interests.map((interest, index) => (
+                  {INTERESTS.map((interest, index) => (
                     <span
                       key={index}
                       className="rounded-full border border-brand-dark/5 bg-brand-bg px-3.5 py-1.5 text-xs font-semibold text-brand-dark/80 shadow-xs"

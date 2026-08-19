@@ -1,5 +1,7 @@
+"use client";
+
 import { HeartHandshake } from "lucide-react";
-import { SERVICES } from "../../data";
+import { SERVICES } from "./content";
 import { Motion } from "./animate";
 import { Catalog } from "./domain";
 

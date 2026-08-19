@@ -1,16 +1,10 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import { Scroll } from "../scroll";
+import { NAV_LINKS } from "@/navigation";
 
-const links = [
-  { id: "accueil", label: "Accueil" },
-  { id: "a-propos", label: "À propos" },
-  { id: "projets", label: "Projets" },
-  { id: "services", label: "Services" },
-  { id: "processus", label: "Processus" },
-  { id: "temoignages", label: "Témoignages" },
-];
-
-const targets = [...links.map((link) => link.id), "contact"];
+const targets = [...NAV_LINKS.map((link) => link.id), "contact"];
 
 function current(): string | null {
   const target = window.location.hash.replace("#", "");
@@ -51,5 +45,5 @@ export function useHeader() {
 
   const toggle = () => setOpen((previous) => !previous);
 
-  return { open, scrolled, active, links, navigate, toggle };
+  return { open, scrolled, active, links: NAV_LINKS, navigate, toggle };
 }

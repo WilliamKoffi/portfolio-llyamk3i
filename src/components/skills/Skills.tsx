@@ -1,3 +1,5 @@
+"use client";
+
 import { Cpu } from "lucide-react";
 import { Motion } from "./animate";
 import { Catalog, type Group } from "./domain";

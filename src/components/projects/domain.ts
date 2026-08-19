@@ -1,6 +1,6 @@
 import type { MouseEvent } from "react";
-import { PROJECTS } from "../../data";
-import type { Project } from "../../types";
+import { PROJECTS } from "./content";
+import type { Project } from "./content";
 
 export namespace Showcase {
   export function filter(category: string): Project[] {

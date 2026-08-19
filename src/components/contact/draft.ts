@@ -31,7 +31,7 @@ export namespace Draft {
 
   export async function send(draft: Model): Promise<boolean> {
     const payload = new FormData();
-    const key = import.meta.env.VITE_WEB3FORMS_KEY ?? "";
+    const key = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "";
 
     payload.append("access_key", key);
     payload.append("name", draft.name);

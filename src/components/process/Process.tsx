@@ -1,6 +1,8 @@
+"use client";
+
 import { AnimatePresence, motion } from "motion/react";
 import { Award, Briefcase, CheckCircle2, GraduationCap, Target } from "lucide-react";
-import { EDUCATION as studies, EXPERIENCES as jobs, PROCESS_STEPS as steps } from "../../data";
+import { EDUCATION as studies, EXPERIENCES as jobs, PROCESS_STEPS as steps } from "./content";
 import { useProcess } from "./hook";
 
 export default function Process() {

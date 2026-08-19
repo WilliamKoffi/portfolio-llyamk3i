@@ -1,5 +1,7 @@
+"use client";
+
 import { MessageSquareQuote, Star } from "lucide-react";
-import { TESTIMONIALS as reviews } from "../../data";
+import { TESTIMONIALS as reviews } from "./content";
 import { Motion } from "./animate";
 
 export default function Testimonials() {

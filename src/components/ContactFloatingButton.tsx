@@ -1,7 +1,4 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
+"use client";
 
 import { useEffect, useState, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
@@ -11,7 +8,7 @@ import { Scroll } from "./scroll";
 export default function ContactFloatingButton() {
   const [show, setShow] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -82,7 +79,7 @@ export default function ContactFloatingButton() {
         >
           {/* Pulsing ring for a subtle, high-end feel */}
           <span className="absolute inset-0 -z-10 animate-ping rounded-full bg-brand-accent/20" />
-          
+
           <MessageSquare size={22} className="relative z-10" />
         </motion.button>
       )}

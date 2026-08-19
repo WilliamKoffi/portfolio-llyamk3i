@@ -1,3 +1,5 @@
+"use client";
+
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { motion } from "motion/react";
 
