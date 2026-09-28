@@ -24,8 +24,16 @@ async function portfolio(browser: Browser) {
   const page = await Browse.page(desktop, "portfolio-desktop", 16_000);
 
   const sections: Section[] = [];
-  for (const id of Object.keys(LABELS)) {
-    if (!(await desktop.locator(`#${id}`).count())) continue;
+  // Page order, not nav order: skills and contact sit between nav entries.
+  const order = await desktop.evaluate((ids) =>
+    ids
+      .map((id) => ({ id, top: document.getElementById(id)?.getBoundingClientRect().top }))
+      .filter((anchor) => anchor.top !== undefined)
+      .sort((a, b) => a.top! - b.top!)
+      .map((anchor) => anchor.id),
+    Object.keys(LABELS),
+  );
+  for (const id of order) {
     await desktop.evaluate((target) => document.getElementById(target)?.scrollIntoView(), id);
     await desktop.waitForTimeout(900);
     sections.push({ id, label: LABELS[id], shot: await Browse.view(desktop, `section-${id}`) });
