@@ -19,6 +19,16 @@ export const PROJECT_CATEGORIES: string[] = [
 
 export const PROJECTS: Project[] = [
   {
+    id: "proj-ka-cosmetics",
+    title: "KA Cosmetics",
+    description: "Boutique e-commerce de soins pour peaux mélanodermes et métissées, livrée partout en Côte d'Ivoire. Frontend Nuxt.js optimisé SEO avec diagnostic de peau, fiches ingrédients complètes et paiement Mobile Money, adossé à une API Laravel dédiée (api.kacosmetic.ci) pour le catalogue, les commandes et les comptes clients.",
+    category: "E-Commerce",
+    image: "/projects/ka-cosmetics.jpg",
+    technologies: ["Nuxt.js", "Vue.js", "Laravel", "PHP", "REST API", "Mobile Money"],
+    demo: "https://kacosmetic.ci/",
+    source: "https://github.com/WilliamKoffi"
+  },
+  {
     id: "proj-elite-auto",
     title: "Elite Auto",
     description: "Plateforme haut de gamme de présentation et de réservation de véhicules de prestige. Conçue sous Next.js pour un rendu ultra-rapide côté serveur (SSR), une optimisation SEO maximale et une interface utilisateur moderne et réactive.",
